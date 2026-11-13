@@ -1,0 +1,224 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────────── Auberge Le Philo · SmartStay design tokens ───────────── */
+:root {
+  --forest-950: #0b1a11;
+  --forest-900: #11251a;
+  --forest-800: #1b3a28;
+  --forest-700: #2d5a3d;
+  --forest-500: #4a8060;
+  --gold-600: #a8851c;
+  --gold-500: #c9a227;
+  --gold-300: #e8c547;
+  --cream-50: #fbf8f2;
+  --cream-100: #f5f0e8;
+  --cream-200: #eae4d5;
+
+  --background: var(--cream-100);
+  --surface: #ffffff;
+  --surface-2: #faf7f0;
+  --elevated: rgba(255, 255, 255, 0.72);
+  --foreground: #1a1a18;
+  --muted-foreground: #6b6459;
+  --border: rgba(27, 58, 40, 0.11);
+  --border-strong: rgba(27, 58, 40, 0.2);
+  --primary: var(--forest-800);
+  --primary-foreground: var(--cream-100);
+  --accent: var(--gold-500);
+  --accent-foreground: #1a1a18;
+  --accent-soft: rgba(201, 162, 39, 0.14);
+  --brand-ink: var(--forest-800);
+  --ring: var(--gold-500);
+
+  /* status */
+  --ok: #2f8a57;
+  --ok-soft: rgba(47, 138, 87, 0.13);
+  --info: #2f6db3;
+  --info-soft: rgba(47, 109, 179, 0.12);
+  --warn: #b7791f;
+  --warn-soft: rgba(201, 162, 39, 0.16);
+  --bad: #c0392b;
+  --bad-soft: rgba(192, 57, 43, 0.12);
+  --ai: #7c5cd6;
+  --ai-soft: rgba(124, 92, 214, 0.12);
+
+  /* chart series — validated (dataviz validate_palette.js) light: all pass */
+  --series-1: #2e8b57;
+  --series-2: #b8860b;
+  --series-3: #7c5cd6;
+  --chart-grid: rgba(27, 58, 40, 0.08);
+
+  --shadow-card: 0 1px 2px rgba(17, 37, 26, 0.04), 0 8px 24px -12px rgba(17, 37, 26, 0.12);
+  --shadow-pop: 0 24px 60px -20px rgba(11, 26, 17, 0.35);
+  --sidebar: var(--forest-800);
+}
+
+.dark {
+  --background: #0c1611;
+  --surface: #13221a;
+  --surface-2: #182b20;
+  --elevated: rgba(19, 34, 26, 0.75);
+  --foreground: #f2ede3;
+  --muted-foreground: #9fa79c;
+  --border: rgba(201, 162, 39, 0.11);
+  --border-strong: rgba(201, 162, 39, 0.22);
+  --primary: var(--gold-500);
+  --primary-foreground: #10200f;
+  --accent: var(--gold-500);
+  --accent-soft: rgba(201, 162, 39, 0.14);
+  --brand-ink: var(--gold-300);
+  --ok: #4cc07f;
+  --ok-soft: rgba(76, 192, 127, 0.14);
+  --info: #6aa8ec;
+  --info-soft: rgba(106, 168, 236, 0.14);
+  --warn: #e3b341;
+  --warn-soft: rgba(227, 179, 65, 0.15);
+  --bad: #ef6f5e;
+  --bad-soft: rgba(239, 111, 94, 0.14);
+  --ai: #a78bfa;
+  --ai-soft: rgba(167, 139, 250, 0.14);
+  --series-1: #3fa86c;
+  --series-2: #b88c16;
+  --series-3: #9277ec;
+  --chart-grid: rgba(242, 237, 227, 0.07);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  --shadow-pop: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+  --sidebar: #0a140e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-elevated: var(--elevated);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted-foreground);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink: var(--brand-ink);
+  --color-ring: var(--ring);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-ai: var(--ai);
+  --color-ai-soft: var(--ai-soft);
+  --color-forest-950: var(--forest-950);
+  --color-forest-900: var(--forest-900);
+  --color-forest-800: var(--forest-800);
+  --color-forest-700: var(--forest-700);
+  --color-forest-500: var(--forest-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-500: var(--gold-500);
+  --color-gold-300: var(--gold-300);
+  --color-cream-50: var(--cream-50);
+  --color-cream-100: var(--cream-100);
+  --color-cream-200: var(--cream-200);
+  --color-sidebar: var(--sidebar);
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --shadow-card: var(--shadow-card);
+  --shadow-pop: var(--shadow-pop);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: rgba(201, 162, 39, 0.35);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  button { cursor: pointer; }
+  /* let wide tables scroll inside their cards instead of stretching grid columns */
+  .grid > * { min-width: 0; }
+}
+
+@layer utilities {
+  .tabular { font-variant-numeric: tabular-nums; }
+  .glass {
+    background: var(--elevated);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  }
+  .ai-gradient {
+    background: linear-gradient(120deg, #7c5cd6 0%, #c9a227 100%);
+  }
+  .ai-text {
+    background: linear-gradient(120deg, var(--ai) 0%, var(--gold-500) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .scrollbar-thin { scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.ai-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.25), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.2s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.5); }
+  100% { box-shadow: 0 0 0 10px rgba(201, 162, 39, 0); }
+}
+.pulse-ring { animation: pulse-ring 1.8s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Print only the invoice / report area */
+@media print {
+  body * { visibility: hidden !important; }
+  .print-area, .print-area * { visibility: visible !important; }
+  .print-area { position: absolute; inset: 0; padding: 24px; background: white !important; color: black !important; box-shadow: none !important; border: 0 !important; }
+  .no-print { display: none !important; }
+}
